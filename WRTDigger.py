@@ -70,8 +70,7 @@ def knock(url_list):
 # http://stackoverflow.com/questions/6999565/python-https-get-with-basic-
 #authentication
 def cred_trier(url):
-  #cred = 'YWRtaW46YWRtaW4='
-  cred = 'YWRtaW46MFREalUzYXZEbVlCYjVMVnhIRzE='
+  cred = 'YWRtaW46YWRtaW4='
   headers = {'Authorization': 'Basic %s' % cred}
   r = requests.get(url, headers=headers, timeout=5)
   return r.headers, r.text, r.status_code
@@ -86,7 +85,7 @@ def main():
 
   # Generating the IPs from the a given range.
   try:
-    for ip in ip_gen('192.168.1.1-2'):
+    for ip in ip_gen('192.168.0-2.1-235'):
       target_url = 'http://%s/' % ip
       url_list.append(target_url)
   except Exception:
